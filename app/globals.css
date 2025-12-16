@@ -1,0 +1,420 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #fffdf8;
+  --foreground: #1a0f0a;
+  --primary: #9a3412;
+  --primary-foreground: #ffffff;
+  --secondary: #c2410c;
+  --secondary-foreground: #ffffff;
+  --accent: #7c2d12;
+  --accent-foreground: #ffffff;
+  --muted: #fef3c7;
+  --muted-foreground: #713f12;
+  --card: #fffbeb;
+  --card-foreground: #1a0f0a;
+  --border: #c2410c;
+  --input: #fffbeb;
+  --ring: #9a3412;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --popover: #fffbeb;
+  --popover-foreground: #1a0f0a;
+  --radius: 0.5rem;
+  --temple-gold: #b8860b;
+  --temple-gold-light: #daa520;
+  --temple-saffron: #c2410c;
+  --temple-maroon: #7c2d12;
+  --chart-1: #ea580c;
+  --chart-2: #0891b2;
+  --chart-3: #475569;
+  --chart-4: #ca8a04;
+  --chart-5: #c2410c;
+  --sidebar: #fafafa;
+  --sidebar-foreground: #1a0f0a;
+  --sidebar-primary: #292524;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #f5f5f4;
+  --sidebar-accent-foreground: #292524;
+  --sidebar-border: #e7e5e4;
+  --sidebar-ring: #a8a29e;
+}
+
+.dark {
+  --background: #1c1410;
+  --foreground: #faf5f0;
+  --primary: #ea580c;
+  --primary-foreground: #1c1410;
+  --secondary: #f59e0b;
+  --secondary-foreground: #1c1410;
+  --accent: #b45309;
+  --accent-foreground: #faf5f0;
+  --muted: #292524;
+  --muted-foreground: #a8a29e;
+  --card: #1c1917;
+  --card-foreground: #faf5f0;
+  --border: #44403c;
+  --input: #292524;
+  --ring: #ea580c;
+  --popover: #1c1410;
+  --popover-foreground: #faf5f0;
+  --chart-1: #3b82f6;
+  --chart-2: #22c55e;
+  --chart-3: #f59e0b;
+  --chart-4: #a855f7;
+  --chart-5: #ef4444;
+  --sidebar: #292524;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #44403c;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #44403c;
+  --sidebar-ring: #6b7280;
+}
+
+@theme inline {
+  --font-sans: var(--font-body-dynamic), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: var(--font-heading-dynamic), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Default Fonts (English) */
+  --font-heading-dynamic: var(--font-montserrat);
+  --font-body-dynamic: var(--font-inter);
+}
+
+/* Telugu Fonts */
+[lang="te"] {
+  --font-heading-dynamic: var(--font-ponnala);
+  --font-body-dynamic: var(--font-ramabhadra);
+  font-size: 1.125rem;
+  /* Increased base size */
+  line-height: 1.7;
+  /* Better spacing for complex characters */
+}
+
+[lang="te"] h1,
+[lang="te"] h2,
+[lang="te"] h3,
+[lang="te"] h4,
+[lang="te"] h5,
+[lang="te"] h6 {
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Tamil Fonts */
+[lang="ta"] {
+  --font-heading-dynamic: var(--font-tiro-tamil);
+  --font-body-dynamic: var(--font-tiro-tamil);
+}
+
+/* Hindi Fonts */
+[lang="hi"] {
+  --font-heading-dynamic: var(--font-yatra-one);
+  /* Body defaults to Inter, which supports Devanagari */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-bold;
+    color: #7c2d12;
+  }
+}
+
+.temple-card {
+  position: relative;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 2px solid #b8860b;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.temple-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(124, 45, 18, 0.15);
+}
+
+/* Elegant Temple Button Style */
+.btn-temple {
+  position: relative;
+  background: linear-gradient(to bottom, #b45309 0%, #92400e 100%);
+  color: #fffbeb;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+}
+
+.btn-temple:hover {
+  background: linear-gradient(to bottom, #d97706 0%, #b45309 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.25);
+}
+
+.btn-temple:active {
+  transform: translateY(1px);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(124, 45, 18, 0.15);
+}
+
+.text-temple-gradient {
+  background: linear-gradient(135deg, #7c2d12 0%, #9a3412 40%, #b8860b 70%, #9a3412 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+
+  to {
+    height: 0;
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+}
+
+/* Mandala background pattern */
+.mandala-bg {
+  background-image: radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(194, 65, 12, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(124, 45, 18, 0.03) 0%, transparent 40%);
+}
+
+/* Floating gentle animation */
+@keyframes floatGentle {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(3deg);
+  }
+}
+
+.float-gentle {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+/* Slow rotation animation */
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-slow {
+  animation: rotateSlow 60s linear infinite;
+}
+
+/* Pulse glow animation */
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Divine glow effect */
+.divine-glow {
+  box-shadow: 0 0 30px rgba(184, 134, 11, 0.3),
+    0 0 60px rgba(184, 134, 11, 0.2),
+    0 0 90px rgba(184, 134, 11, 0.1);
+}
+
+/* Hover glow effect */
+.hover-glow:hover {
+  box-shadow: 0 8px 30px rgba(184, 134, 11, 0.25),
+    0 0 40px rgba(184, 134, 11, 0.1);
+}
+
+/* Ornate frame styling */
+.ornate-frame {
+  position: relative;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 3px solid #b8860b;
+  border-radius: 16px;
+}
+
+.ornate-frame::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid rgba(184, 134, 11, 0.3);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+/* Image frame with ornate border */
+.image-frame-ornate {
+  position: relative;
+  border: 4px solid #b8860b;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(124, 45, 18, 0.15);
+}
+
+.image-frame-ornate::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Divider ornate styling */
+.divider-ornate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.divider-ornate::before,
+.divider-ornate::after {
+  content: '';
+  flex: 1;
+  max-width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #b8860b 50%, transparent 100%);
+}
+
+.divider-symbol {
+  color: #b8860b;
+  font-size: 1.5rem;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Gradient Animation for Divine Buttons */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient 3s ease infinite;
+}
